@@ -7,9 +7,9 @@
  # # UserService
  # Service in the horseZoneJavascriptApp.
 ###
-angular.module('horseZoneJavascriptApp')
-  .service 'UserService', ($http, $log) ->
-    user = undefined
+angular.module('horseZoneJavascriptApp').service 'UserService', ($http, $log) ->
 
-    @createNewUser = ()->
-      $log.info "===> Creating a new user."
+  user = undefined
+
+  @createNewUser = (username, password) ->
+    $log.info "===> Creating a new user."

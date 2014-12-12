@@ -27,6 +27,12 @@ angular
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
+      .when '/registration',
+        templateUrl: 'views/registration.html'
+        controller: 'RegistrationCtrl'
+      .when '/signin',
+        templateUrl: 'views/signin.html'
+        controller: 'SigninCtrl'
       .otherwise
         redirectTo: '/'
 

@@ -7,6 +7,7 @@ describe 'Service: UserService', ->
 
   # instantiate service
   UserService = {}
+
   beforeEach inject (_UserService_) ->
     UserService = _UserService_
 
