@@ -11,5 +11,8 @@ describe 'Service: UserService', ->
   beforeEach inject (_UserService_) ->
     UserService = _UserService_
 
-  it 'should do something', ->
-    expect(!!UserService).toBe true
+  describe 'createNewUser', ->
+
+    it 'should do something', ->
+      UserService.createNewUser 'foobar@example.com', '38f8gA387gaBg'
+      expect(!!UserService).toBe true
