@@ -15,5 +15,11 @@ describe 'Controller: RegistrationCtrl', ->
       $scope: scope
     }
 
-  it 'should attach a list of awesomeThings to the scope', ->
-    expect(scope.awesomeThings.length).toBe 3
+  it 'should attach emailAddressValid to the controller instance', ->
+    expect(RegistrationCtrl.emailAddressValid).toBe true
+
+  it 'should attach passwordValid to the controller instance', ->
+    expect(RegistrationCtrl.passwordValid).toBe true
+
+  it 'should attach confirmPasswordValid to the controller instance', ->
+    expect(RegistrationCtrl.confirmPasswordValid).toBe true
