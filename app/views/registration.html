@@ -15,7 +15,8 @@
                        class="form-control"
                        id="emailAddressInput"
                        placeholder="joe.smith@example.com"
-                       aria-describedby="emailAddressInputStatus">
+                       aria-describedby="emailAddressInputStatus"
+                       ng-model="registrationCtrl.emailAddress">
               </div>
               <div class="col-sm-1">
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
@@ -32,7 +33,8 @@
                        class="form-control"
                        id="passwordInput"
                        placeholder="pa$$word"
-                       aria-describedby="passwordInputStatus">
+                       aria-describedby="passwordInputStatus"
+                       ng-model="registrationCtrl.password">
               </div>
               <div class="col-sm-1">
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
@@ -49,7 +51,8 @@
                        class="form-control"
                        id="passwordConfirmationInput"
                        placeholder="pa$$w0rd"
-                       aria-describedby="passwordConfirmationInputStatus">
+                       aria-describedby="passwordConfirmationInputStatus"
+                       ng-model="registrationCtrl.confirmPassword">
               </div>
               <div class="col-sm-1">
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
@@ -62,7 +65,9 @@
                 &nbsp;
               </div>
               <div class="col-sm-8">
-                <button type="submit" class="btn btn-primary btn-default">Register</button>
+                <button type="submit" class="btn btn-primary btn-default" ng-click="registrationCtrl.doRegister()">
+                  Register
+                </button>
               </div>
             </div>
           </form>

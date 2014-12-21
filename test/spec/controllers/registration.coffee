@@ -15,11 +15,11 @@ describe 'Controller: RegistrationCtrl', ->
       $scope: scope
     }
 
-  it 'should attach emailAddressValid to the controller instance', ->
-    expect(RegistrationCtrl.emailAddressValid).toBe true
-
-  it 'should attach passwordValid to the controller instance', ->
-    expect(RegistrationCtrl.passwordValid).toBe true
-
-  it 'should attach confirmPasswordValid to the controller instance', ->
-    expect(RegistrationCtrl.confirmPasswordValid).toBe true
+#  it 'should attach emailAddressValid to the controller instance', ->
+#    expect(RegistrationCtrl.emailAddressValid).toBe true
+#
+#  it 'should attach passwordValid to the controller instance', ->
+#    expect(RegistrationCtrl.passwordValid).toBe true
+#
+#  it 'should attach confirmPasswordValid to the controller instance', ->
+#    expect(RegistrationCtrl.confirmPasswordValid).toBe true

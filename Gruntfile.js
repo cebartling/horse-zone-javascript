@@ -18,7 +18,9 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    deploy: '../horse-zone/app/assets',
+    deployViews: '../horse-zone/public/views'
   };
 
   // Define the configuration for all the tasks
@@ -155,7 +157,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -254,7 +256,7 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
+        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
       }
     },
 
@@ -347,31 +349,63 @@ module.exports = function (grunt) {
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: '<%= yeoman.dist %>',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= yeoman.dist %>/images',
-          src: ['generated/*']
-        }]
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.dist %>',
+            src: [
+              '*.{ico,png,txt}',
+              '.htaccess',
+              '*.html',
+              'views/{,*/}*.html',
+              'images/{,*/}*.{webp}',
+              'fonts/{,*/}*.*'
+            ]
+          },
+          {
+            expand: true,
+            cwd: '.tmp/images',
+            dest: '<%= yeoman.dist %>/images',
+            src: ['generated/*']
+          }
+        ]
       },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      deploy: {
+        files: [
+          {
+            expand: true,
+            dot: true,
+            cwd: '<%= yeoman.dist %>/scripts',
+            dest: '<%= yeoman.deploy %>/javascripts',
+            src: ['*.js']
+          },
+          {
+            expand: true,
+            cwd: '<%= yeoman.dist %>/views',
+            dest: '<%= yeoman.deployViews %>',
+            src: ['*.html']
+          },
+          {
+            expand: true,
+            cwd: '<%= yeoman.dist %>/styles',
+            dest: '<%= yeoman.deploy %>/stylesheets',
+            src: ['*.css']
+          },
+          {
+            expand: true,
+            cwd: '<%= yeoman.dist %>/images',
+            dest: '<%= yeoman.deploy %>/images',
+            src: ['*.*']
+          }
+        ]
       }
     },
 
@@ -443,7 +477,7 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    'filerev',
+    //'filerev',
     'usemin',
     'htmlmin'
   ]);
@@ -452,5 +486,12 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('deploy', [
+    'newer:jshint',
+    'test',
+    'build',
+    'copy:deploy'
   ]);
 };
