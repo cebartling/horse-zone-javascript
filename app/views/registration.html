@@ -5,58 +5,97 @@
       <div class="panel panel-default">
         <div class="panel-heading"><h3 class="panel-title"><strong>Registration</strong></h3></div>
         <div class="panel-body">
-          <form class="form-horizontal" role="form">
-            <div ng-class="{true: 'has-success', false: 'has-error'}[registrationCtrl.emailAddressValid]"
-                 class="form-group has-feedback">
+          <form name="registrationForm"
+                class="form-horizontal"
+                role="form"
+                novalidate
+                ng-submit="registrationCtrl.submitForm(registrationForm.$valid)">
+            <div class="form-group has-feedback"
+                 ng-class="{ 'has-error' : registrationForm.emailAddressInput.$invalid && !registrationForm.emailAddressInput.$pristine,
+                 'has-success' : registrationForm.emailAddressInput.$valid && !registrationForm.emailAddressInput.$pristine }">
               <label class="control-label col-sm-4" for="emailAddressInput">Email address</label>
 
               <div class="col-sm-7">
-                <input type="text"
+                <input type="email"
                        class="form-control"
+                       name="emailAddressInput"
                        id="emailAddressInput"
                        placeholder="joe.smith@example.com"
                        aria-describedby="emailAddressInputStatus"
-                       ng-model="registrationCtrl.emailAddress">
+                       ng-model="registrationCtrl.emailAddress"
+                       ng-required="true" required>
               </div>
               <div class="col-sm-1">
+                <span
+                  ng-show="registrationForm.emailAddressInput.$valid && !registrationForm.emailAddressInput.$pristine">
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 <span id="emailAddressInputStatus" class="sr-only">(success)</span>
+                </span>
+                <span
+                  ng-show="registrationForm.emailAddressInput.$invalid && !registrationForm.emailAddressInput.$pristine">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                <span id="emailAddressInputStatus" class="sr-only">(error)</span>
+                </span>
               </div>
             </div>
 
-            <div ng-class="{true: 'has-success', false: 'has-error'}[registrationCtrl.passwordValid]"
-                 class="form-group has-feedback">
-              <label class="control-label col-sm-4" for="passwordInput">Password</label>
+            <div class="form-group has-feedback"
+                 ng-class="{ 'has-error' : registrationForm.passwordInput.$invalid && !registrationForm.passwordInput.$pristine,
+                 'has-success' : registrationForm.passwordInput.$valid && !registrationForm.passwordInput.$pristine }">
+            <label class="control-label col-sm-4" for="passwordInput">Password</label>
 
               <div class="col-sm-7">
                 <input type="password"
                        class="form-control"
+                       name="passwordInput"
                        id="passwordInput"
                        placeholder="pa$$word"
                        aria-describedby="passwordInputStatus"
-                       ng-model="registrationCtrl.password">
+                       ng-model="registrationCtrl.password"
+                       ng-minlength="8"
+                       ng-required="true" required>
               </div>
               <div class="col-sm-1">
+                <span
+                  ng-show="registrationForm.passwordInput.$valid && !registrationForm.passwordInput.$pristine">
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 <span id="passwordInputStatus" class="sr-only">(success)</span>
+                </span>
+                <span
+                  ng-show="registrationForm.passwordInput.$invalid && !registrationForm.passwordInput.$pristine">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                <span id="passwordInputStatus" class="sr-only">(error)</span>
+                </span>
               </div>
             </div>
 
-            <div ng-class="{true: 'has-success', false: 'has-error'}[registrationCtrl.confirmPasswordValid]"
-                 class="form-group has-feedback">
+            <div class="form-group has-feedback"
+                 ng-class="{ 'has-error' : registrationForm.passwordConfirmationInput.$invalid && !registrationForm.passwordConfirmationInput.$pristine,
+                 'has-success' : registrationForm.passwordConfirmationInput.$valid && !registrationForm.passwordConfirmationInput.$pristine }">
               <label class="control-label col-sm-4" for="passwordConfirmationInput">Confirm password</label>
 
               <div class="col-sm-7">
                 <input type="password"
                        class="form-control"
+                       name="passwordConfirmationInput"
                        id="passwordConfirmationInput"
                        placeholder="pa$$w0rd"
                        aria-describedby="passwordConfirmationInputStatus"
-                       ng-model="registrationCtrl.confirmPassword">
+                       ng-model="registrationCtrl.confirmPassword"
+                       ng-minlength="8"
+                       ng-required="true" required>
               </div>
               <div class="col-sm-1">
+                <span
+                  ng-show="registrationForm.passwordConfirmationInput.$valid && !registrationForm.passwordConfirmationInput.$pristine">
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 <span id="passwordConfirmationInputStatus" class="sr-only">(success)</span>
+                </span>
+                <span
+                  ng-show="registrationForm.passwordConfirmationInput.$invalid && !registrationForm.passwordConfirmationInput.$pristine">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                <span id="passwordConfirmationInputStatus" class="sr-only">(error)</span>
+                </span>
               </div>
             </div>
 
@@ -65,7 +104,7 @@
                 &nbsp;
               </div>
               <div class="col-sm-8">
-                <button type="submit" class="btn btn-primary btn-default" ng-click="registrationCtrl.doRegister()">
+                <button type="submit" class="btn btn-primary btn-default" ng-disabled="registrationForm.$invalid">
                   Register
                 </button>
               </div>
