@@ -11,11 +11,19 @@ angular.module('horseZoneJavascriptApp').controller 'RegistrationCtrl', ($scope,
   @emailAddress = ''
   @password = ''
   @confirmPassword = ''
+  @registrationSubmitted = false
+  @registrationSuccessful = false
+  @registrationFailed = false
 
   @submitForm = (isValid) ->
     if isValid
       $log.info "Registering user...#{@emailAddress}"
-      UserService.createNewUser @emailAddress, @password
+      @registrationSubmitted = true
+      promise = UserService.createNewUser @emailAddress, @password
+      promise.success (data, status, headers, config) =>
+        @registrationSuccessful = true
+      promise.error (data, status, headers, config) =>
+        @registrationFailed = true
     else
       alert "The form is invalid."
 

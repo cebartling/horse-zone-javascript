@@ -23,4 +23,5 @@ angular.module('horseZoneJavascriptApp').factory 'UserService', ($http, $log) ->
 
     promise.error (data, status, headers, config) ->
 
+    promise
   }

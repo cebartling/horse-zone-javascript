@@ -1,5 +1,19 @@
 <div class="container" ng-controller="RegistrationCtrl as registrationCtrl">
   <div class="row">
+    <div class="alert alert-success alert-dismissible" role="alert"
+         ng-show="registrationCtrl.registrationSubmitted && registrationCtrl.registrationSuccessful">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong>Success!</strong> Your registration request was accepted.  You should expect to see an email in your inbox
+      very soon, detailing the next steps to using Horse Zone.
+    </div>
+    <div class="alert alert-danger alert-dismissible" role="alert"
+         ng-show="registrationCtrl.registrationSubmitted && registrationCtrl.registrationFailed">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong>Error!</strong> Your registration request was NOT accepted.  If you continue to encounter errors, please
+      let us know here.
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
       <div class="panel panel-default">
