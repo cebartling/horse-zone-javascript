@@ -24,7 +24,7 @@ angular.module('horseZoneJavascriptApp').controller 'RegistrationCtrl', ($scope,
         @registrationSuccessful = true
       promise.error (data, status, headers, config) =>
         @registrationFailed = true
-    else
-      alert "The form is invalid."
 
+  @isConfirmPasswordValid = () ->
+    @password == @confirmPassword
 

@@ -84,8 +84,8 @@
             </div>
 
             <div class="form-group has-feedback"
-                 ng-class="{ 'has-error' : registrationForm.passwordConfirmationInput.$invalid && !registrationForm.passwordConfirmationInput.$pristine,
-                 'has-success' : registrationForm.passwordConfirmationInput.$valid && !registrationForm.passwordConfirmationInput.$pristine }">
+                 ng-class="{ 'has-error' : !registrationForm.passwordConfirmationInput.$pristine && (registrationForm.passwordConfirmationInput.$invalid || !registrationCtrl.isConfirmPasswordValid()),
+                 'has-success' : registrationForm.passwordConfirmationInput.$valid && !registrationForm.passwordConfirmationInput.$pristine && registrationCtrl.isConfirmPasswordValid()}">
               <label class="control-label col-sm-4" for="passwordConfirmationInput">Confirm password</label>
 
               <div class="col-sm-7">
@@ -101,12 +101,12 @@
               </div>
               <div class="col-sm-1">
                 <span
-                  ng-show="registrationForm.passwordConfirmationInput.$valid && !registrationForm.passwordConfirmationInput.$pristine">
+                  ng-show="registrationForm.passwordConfirmationInput.$valid && !registrationForm.passwordConfirmationInput.$pristine && registrationCtrl.isConfirmPasswordValid()">
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
                 <span id="passwordConfirmationInputStatus" class="sr-only">(success)</span>
                 </span>
                 <span
-                  ng-show="registrationForm.passwordConfirmationInput.$invalid && !registrationForm.passwordConfirmationInput.$pristine">
+                  ng-show="!registrationForm.passwordConfirmationInput.$pristine && (registrationForm.passwordConfirmationInput.$invalid || !registrationCtrl.isConfirmPasswordValid())">
                 <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                 <span id="passwordConfirmationInputStatus" class="sr-only">(error)</span>
                 </span>
