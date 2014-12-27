@@ -28,17 +28,46 @@
       <table class="table">
         <thead>
         <tr>
-          <th>Sunday</th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
+          <th>Times</th>
+          <th>
+            Sunday
+            <br>
+            {{ customerLessonsCtrl.currentDay().day(0).format('MMM D') }}
+          </th>
+          <th>Monday
+            <br>
+            {{ customerLessonsCtrl.currentDay().day(1).format('MMM D') }}
+          </th>
+          <th>
+            Tuesday
+            <br>
+            {{ customerLessonsCtrl.currentDay().day(2).format('MMM D') }}
+          </th>
+          <th>
+            Wednesday
+            <br>
+            {{ customerLessonsCtrl.currentDay().day(3).format('MMM D') }}
+          </th>
+          <th>
+            Thursday
+            <br>
+            {{ customerLessonsCtrl.currentDay().day(4).format('MMM D') }}
+          </th>
+          <th>
+            Friday
+            <br>
+            {{ customerLessonsCtrl.currentDay().day(5).format('MMM D') }}
+          </th>
+          <th>
+            Saturday
+            <br>
+            {{ customerLessonsCtrl.currentDay().day(6).format('MMM D') }}
+          </th>
         </tr>
         </thead>
         <tbody>
         <tr>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>

@@ -21,6 +21,8 @@ angular.module('horseZoneJavascriptApp').factory 'LessonsService', ($http, $log)
       @_currentDate = moment()
 
 
+
+
 #  createNewUser: (email, password) ->
 #    $log.info "===> Creating a new user with email: #{email}."
 #    requestData = {email: email, password: password}

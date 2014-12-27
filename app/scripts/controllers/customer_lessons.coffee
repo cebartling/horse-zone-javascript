@@ -9,6 +9,9 @@
 ###
 angular.module('horseZoneJavascriptApp').controller 'CustomerLessonsCtrl', ($scope, $log, LessonsService) ->
 
+  @currentDay = () ->
+    LessonsService.currentDate()
+
   @currentWeek = () ->
     sunday = LessonsService.currentDate().day(0)
     saturday = LessonsService.currentDate().day(6)
