@@ -9,6 +9,17 @@
 ###
 angular.module('horseZoneJavascriptApp').factory 'LessonsService', ($http, $log) ->
   return {
+    _currentDate: moment()
+
+    currentDate: () ->
+      moment(@_currentDate.toDate())
+
+    moveCurrentDate: (deltaInDays) ->
+      @_currentDate.add(deltaInDays, 'days')
+
+    moveToToday: () ->
+      @_currentDate = moment()
+
 
 #  createNewUser: (email, password) ->
 #    $log.info "===> Creating a new user with email: #{email}."
