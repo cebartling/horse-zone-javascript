@@ -9,16 +9,80 @@
 ###
 angular.module('horseZoneJavascriptApp').factory 'LessonsService', ($http, $log) ->
   return {
-    _currentDate: moment()
+  _currentDate: moment()
 
-    currentDate: () ->
-      moment(@_currentDate.toDate())
+  currentDate: () ->
+    moment(@_currentDate.toDate())
 
-    moveCurrentDate: (deltaInDays) ->
-      @_currentDate.add(deltaInDays, 'days')
+  moveCurrentDate: (deltaInDays) ->
+    @_currentDate.add(deltaInDays, 'days')
 
-    moveToToday: () ->
-      @_currentDate = moment()
+  moveToToday: () ->
+    @_currentDate = moment()
+
+  getSchedule: () ->
+    [
+      {
+        "time": "9:00 AM",
+        "sunday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "monday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "tuesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "wednesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "thursday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "friday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "saturday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}]
+      },
+      {
+        "time": "9:30 AM",
+        "sunday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "monday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "tuesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "wednesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "thursday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "friday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "saturday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}]
+      },
+      {
+        "time": "10:00 AM",
+        "sunday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "monday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "tuesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "wednesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "thursday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "friday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "saturday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}]
+      },
+      {
+        "time": "10:30 AM",
+        "sunday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "monday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "tuesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "wednesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "thursday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "friday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "saturday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}]
+      },
+      {
+        "time": "11:00 AM",
+        "sunday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "monday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "tuesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "wednesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "thursday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "friday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "saturday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}]
+      },
+      {
+        "time": "11:30 AM",
+        "sunday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "monday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "tuesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "wednesday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "thursday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "friday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}],
+        "saturday": [{"name": "Amy Hutchison"}, {"name": "Todd Perkins"}, {"name": "Lyndsay Belfanz"}]
+      }
+    ]
 
 
 

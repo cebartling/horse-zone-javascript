@@ -16,7 +16,8 @@ angular.module('horseZoneJavascriptApp', [
   'ngResource',
   'ngRoute',
   'ngSanitize',
-  'ngTouch'
+  'ngTouch',
+  'angularSpinner'
 ]).config ($routeProvider) ->
   $routeProvider
   .when '/',
