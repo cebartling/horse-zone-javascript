@@ -10,6 +10,52 @@
     <span us-spinner="{{ profileCtrl.spinnerOptions }}" spinner-key="profile-spinner"></span>
   </div>
   <div class="row">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="emailAddress" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-6">
+          <input type="email"
+                 class="form-control"
+                 id="emailAddress"
+                 placeholder="joe.smith@mycompany.com"
+                 ng-model="profileCtrl.user.emailAddress">
+        </div>
+        <div class="col-sm-3">
+          <!-- Error message -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="firstName" class="col-sm-3 control-label">First name</label>
+        <div class="col-sm-6">
+          <input type="text"
+                 class="form-control"
+                 id="firstName"
+                 placeholder="Joe"
+                 ng-model="profileCtrl.user.firstName">
+        </div>
+        <div class="col-sm-3">
+          <!-- Error message -->
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName" class="col-sm-3 control-label">Last name</label>
+        <div class="col-sm-6">
+          <input type="text"
+                 class="form-control"
+                 id="lastName"
+                 placeholder="Smith"
+                 ng-model="profileCtrl.user.lastName">
+        </div>
+        <div class="col-sm-3">
+          <!-- Error message -->
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <button type="submit" class="btn btn-default bn-primary">Save</button>
+        </div>
+      </div>
+    </form>
   </div>
 
 </div>
