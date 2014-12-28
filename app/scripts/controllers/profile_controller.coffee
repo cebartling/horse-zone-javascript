@@ -27,4 +27,19 @@ angular.module('horseZoneJavascriptApp').controller 'ProfileCtrl',
       left: '50%' # Left position relative to parent,
       color: '#0c84e4'
     }
+    @profileSubmitted = false
+    @saveSuccessful = false
+    @saveFailed = false
+    @user = undefined
+
+    @submitForm = (isValid) ->
+      if isValid
+        $log.info "Updating user profile...#{@emailAddress}"
+        @profileSubmitted = true
+#        promise = UserService.createNewUser @emailAddress, @password
+#        promise.success (data, status, headers, config) =>
+#          @registrationSuccessful = true
+#        promise.error (data, status, headers, config) =>
+#          @registrationFailed = true
+
 
