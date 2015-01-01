@@ -24,6 +24,7 @@ module.exports = (config) ->
       'bower_components/angular-sanitize/angular-sanitize.js'
       'bower_components/angular-touch/angular-touch.js'
       'bower_components/angular-spinner/angular-spinner.js'
+      'bower_components/angular-moment/angular-moment.js'
       'app/scripts/**/*.coffee'
       'test/mock/**/*.coffee'
       'test/spec/**/*.coffee'
