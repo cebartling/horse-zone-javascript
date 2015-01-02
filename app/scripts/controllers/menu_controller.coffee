@@ -9,11 +9,11 @@
 ###
 angular.module('horseZoneJavascriptApp').controller 'MenuCtrl', ($scope, $log, $location) ->
 
-  @isMenuDisplayed: (menuKey) ->
+  @isMenuDisplayed = (menuKey) ->
     false
 
-  @isUserSignedIn: () ->
+  @isUserSignedIn = () ->
     false
 
-  @isRoute: (routeName) ->
+  @isRoute = (routeName) ->
     $location.path() == routeName
