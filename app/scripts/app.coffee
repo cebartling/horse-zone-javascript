@@ -36,6 +36,9 @@ angular.module('horseZoneJavascriptApp', [
   .when '/signin',
     templateUrl: 'views/signin.html'
     controller: 'SigninCtrl'
+  .when '/register',
+    templateUrl: 'views/registration.html'
+    controller: 'RegistrationCtrl'
   .otherwise
       redirectTo: '/'
 
