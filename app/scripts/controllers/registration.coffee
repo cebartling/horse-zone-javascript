@@ -7,7 +7,7 @@
  # # RegistrationCtrl
  # Controller of the horseZoneJavascriptApp
 ###
-angular.module('horseZoneJavascriptApp').controller 'RegistrationCtrl', ($scope, $log, UserService) ->
+angular.module('horseZoneJavascriptApp').controller 'RegistrationCtrl', ($scope, $log, $location, UserService) ->
   @emailAddress = ''
   @password = ''
   @confirmPassword = ''
@@ -22,6 +22,7 @@ angular.module('horseZoneJavascriptApp').controller 'RegistrationCtrl', ($scope,
       promise = UserService.createNewUser @emailAddress, @password
       promise.success (data, status, headers, config) =>
         @registrationSuccessful = true
+        $location.path('#/')
       promise.error (data, status, headers, config) =>
         @registrationFailed = true
 
