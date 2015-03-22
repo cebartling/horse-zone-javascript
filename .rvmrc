@@ -1,1 +1,1 @@
-rvm use --create 2.1.5@horse-zone-javascript
+rvm use --create 2.2.1@horse-zone-javascript
