@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/cebartling/horse-zone-javascript.png?label=ready&title=Ready)](https://waffle.io/cebartling/horse-zone-javascript)
 horse-zone-javascript
 =====================
 
