@@ -1,10 +1,26 @@
-angular.module 'horseZone', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap']
-  .config ($stateProvider, $urlRouterProvider) ->
-    $stateProvider
-      .state "home",
-        url: "/",
-        templateUrl: "app/main/main.html",
-        controller: "MainCtrl"
+'use strict'
 
-    $urlRouterProvider.otherwise '/'
+angular.module 'horseZone',
+  [
+    'ngAnimate',
+    'ngCookies',
+    'ngTouch',
+    'ngSanitize',
+    'restangular',
+    'ui.router',
+    'ui.bootstrap'
+  ]
+.config ($stateProvider, $urlRouterProvider) ->
+  $stateProvider.state "home",
+    url: "/",
+    templateUrl: "app/main/main.html",
+    controller: "MainCtrl"
+
+  $stateProvider.state 'signIn',
+    url: '/sign_in',
+    templateUrl: 'app/sign_in/sign_in.html',
+    controller: 'SignInCtrl',
+    controllerAs: 'signInCtrl'
+
+  $urlRouterProvider.otherwise '/sign_in'
 
