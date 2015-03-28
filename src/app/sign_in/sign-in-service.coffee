@@ -5,9 +5,10 @@ angular.module('horseZone').factory 'SignInService',
   ($http, $log) ->
     class SignInService
       constructor: ->
-        @loginUrl = '/users/sign_in'
+        @loginUrl = 'users/sessions'
 
       signIn: (credentials) ->
+        $log.info "Attempting to sign in '#{credentials.email}'."
 #        base64EncodedAuth = btoa("#{credentials.email}:#{credentials.password}")
 #        options = {headers: {'Authorization': "Basic #{base64EncodedAuth}"}}
         options = {headers: {}}

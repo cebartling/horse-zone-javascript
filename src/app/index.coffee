@@ -20,7 +20,7 @@ angular.module 'horseZone',
     url: '/sign_in',
     templateUrl: 'app/sign_in/sign_in.html',
     controller: 'SignInCtrl',
-    controllerAs: 'signInCtrl'
+    controllerAs: 'SignInCtrl'
 
   $urlRouterProvider.otherwise '/sign_in'
 

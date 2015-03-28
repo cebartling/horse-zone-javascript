@@ -5,7 +5,7 @@ angular.module('horseZone')
   (SignInService, $state) ->
     @credentials = {email: '', password: ''}
 
-    @signIn = () ->
+    @signIn = ->
       promise = SignInService.signIn @credentials
       promise.then @onSuccessSignIn, @onErrorSignIn
 
