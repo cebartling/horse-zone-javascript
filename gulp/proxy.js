@@ -48,7 +48,7 @@ function proxyMiddleware(req, res, next) {
    * for your needs. If you can, you could also check on a context in the url which
    * may be more reliable but can't be generic.
    */
-  if (/api\//.test(req.url) || /users\/sessions/.test(req.url)) {
+  if (/api\//.test(req.url) || /authenticate/.test(req.url)) {
     console.log('Redirect to API backend: ' + req.url);
     proxy.web(req, res);
   } else {
@@ -56,13 +56,4 @@ function proxyMiddleware(req, res, next) {
   }
 }
 
-/*
- * This is where you activate or not your proxy.
- *
- * The first line activate if and the second one ignored it
- */
-
 module.exports = [proxyMiddleware];
-//module.exports = function() {
-//  return [proxyMiddleware];
-//};
