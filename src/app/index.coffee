@@ -22,6 +22,12 @@ angular.module 'horseZone',
     controller: 'SignInCtrl',
     controllerAs: 'SignInCtrl'
 
+  $stateProvider.state 'accountCreation',
+    url: '/account_creation',
+    templateUrl: 'app/account_creation/account_creation.html',
+    controller: 'AccountCreationCtrl',
+    controllerAs: 'AccountCreationCtrl'
+
   $stateProvider.state 'welcome',
     url: '/welcome',
     templateUrl: 'app/welcome/welcome.html',
