@@ -1,20 +1,19 @@
 'use strict'
 
-angular.module('horseZone')
-.controller 'SignInCtrl',
-  (SignInService, $state) ->
-    @credentials = {emailAddress: '', password: ''}
+angular.module('horseZone').controller 'SignInCtrl', (SignInService, $state) ->
 
-    @signIn = ->
-      promise = SignInService.signIn @credentials
-      promise.then @onSuccessSignIn, @onErrorSignIn
+  @credentials = {emailAddress: '', password: ''}
+  @signInError = false
 
-    @onSuccessSignIn = ->
-      alert "Successfully signed in"
-#      $state.go 'welcome'
+  @signIn = ->
+    promise = SignInService.signIn @credentials
+    promise.then @onSuccessSignIn, @onErrorSignIn
 
-    @onErrorSignIn = =>
-      @loginError = true
-      $state.go 'signIn'
+  @onSuccessSignIn = ->
+    $state.go 'welcome'
 
-    @
+  @onErrorSignIn = =>
+    @signInError = true
+    $state.go 'signIn'
+
+  @

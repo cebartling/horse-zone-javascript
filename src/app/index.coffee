@@ -22,5 +22,11 @@ angular.module 'horseZone',
     controller: 'SignInCtrl',
     controllerAs: 'SignInCtrl'
 
+  $stateProvider.state 'welcome',
+    url: '/welcome',
+    templateUrl: 'app/welcome/welcome.html',
+    controller: 'WelcomeCtrl',
+    controllerAs: 'WelcomeCtrl'
+
   $urlRouterProvider.otherwise '/sign_in'
 
