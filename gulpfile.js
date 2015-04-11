@@ -7,6 +7,7 @@ var wrench = require('wrench');
 
 var options = {
   src: 'src',
+  spec: 'spec',
   dist: 'dist',
   tmp: '.tmp',
   e2e: 'e2e',
