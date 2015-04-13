@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('horseZone').factory 'AccountCreationCtrl', ($http, $log) ->
+angular.module('horseZone').factory 'AccountCreationService', ($http, $log) ->
 
   class AccountCreationService
 #    constructor: ->

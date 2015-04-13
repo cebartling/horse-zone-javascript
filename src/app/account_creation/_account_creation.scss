@@ -1,18 +1,18 @@
-.form-signin {
+.form-account-creation {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }
 
-.form-signin .form-signin-heading, .form-signin .checkbox {
+.form-account-creation .form-account-creation-heading, .form-account-creation .checkbox {
   margin-bottom: 10px;
 }
 
-.form-signin .checkbox {
+.form-account-creation .checkbox {
   font-weight: normal;
 }
 
-.form-signin .form-control {
+.form-account-creation .form-control {
   position: relative;
   font-size: 16px;
   height: auto;
@@ -22,20 +22,24 @@
   box-sizing: border-box;
 }
 
-.form-signin .form-control:focus {
+.form-account-creation .form-control:focus {
   z-index: 2;
 }
 
-.form-signin input[type="text"] {
+.form-account-creation input[type="text"] {
   margin-bottom: -1px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
+.form-account-creation input[type="password"] {
+  margin-bottom: -1px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.form-account-creation .spacer {
+  margin-bottom: 10px;
 }
 
 .account-wall {
@@ -68,7 +72,3 @@
   margin-top: 10px;
 }
 
-.new-account {
-  display: block;
-  margin-top: 10px;
-}
