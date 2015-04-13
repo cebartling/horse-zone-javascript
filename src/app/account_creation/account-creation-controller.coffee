@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('horseZone').controller 'AccountCreationCtrl', ($state, AccountCreationService) ->
-  @accountCreationError = false
+  @accountCreationError = true
 
   @account = {
     firstName: undefined

@@ -38,6 +38,10 @@
   border-top-right-radius: 0;
 }
 
+.form-signin .spacer {
+  margin-bottom: 10px;
+}
+
 .account-wall {
   margin-top: 20px;
   padding: 40px 0 20px 0;
@@ -62,6 +66,14 @@
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+
+.remember-me {
+  margin-top: 25px;
+}
+
+.create-account {
+  margin-top: 25px;
 }
 
 .need-help {
