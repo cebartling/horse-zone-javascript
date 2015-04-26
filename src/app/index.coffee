@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'horseZone',
+horseZoneApp = angular.module('horseZone',
   [
     'ngAnimate',
     'ngCookies',
@@ -8,9 +8,12 @@ angular.module 'horseZone',
     'ngSanitize',
     'restangular',
     'ui.router',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angular-cache'
   ]
-.config ($stateProvider, $urlRouterProvider) ->
+)
+
+horseZoneApp.config ($stateProvider, $urlRouterProvider) ->
   $stateProvider.state 'signIn',
     url: '/sign_in',
     templateUrl: 'app/sign_in/sign_in.html',
@@ -31,3 +34,12 @@ angular.module 'horseZone',
 
   $urlRouterProvider.otherwise '/sign_in'
 
+horseZoneApp.config (RestangularProvider) ->
+  RestangularProvider.setBaseUrl '/api'
+  RestangularProvider.setDefaultHeaders {
+    'Content-Type': 'application/json'
+    'Accept': 'application/json'
+  }
+
+horseZoneApp.config (CacheFactoryProvider) ->
+  angular.extend CacheFactoryProvider.defaults, { maxAge: 15 * 60 * 1000 }

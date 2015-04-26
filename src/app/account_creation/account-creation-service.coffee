@@ -1,21 +1,13 @@
 'use strict'
 
-angular.module('horseZone').factory 'AccountCreationService', ($http, $log) ->
+angular.module('horseZone').factory 'AccountCreationService', ($http, $log, Restangular) ->
 
   class AccountCreationService
-#    constructor: ->
-#      @loginUrl = 'authenticate'
-#
-#    signIn: (credentials) ->
-#      $log.info "Attempting to sign in '#{credentials.emailAddress}'."
-#      #        base64EncodedAuth = btoa("#{credentials.email}:#{credentials.password}")
-#      #        options = {headers: {'Authorization': "Basic #{base64EncodedAuth}"}}
-#      options = {headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}}
-#      data = {email_address: credentials.emailAddress, password: credentials.password}
-#      promise = $http.post(@loginUrl, data, options)
-#      promise.then (response) ->
-#        $log.info 'Setting the web token'
-#      #          authorizationService.setAuthorization(response.data)
-#      promise
+    
+    create: (account) ->
+      users = Restangular.all 'users'
+      promise = users.post account
+      promise
+
 
   new AccountCreationService()

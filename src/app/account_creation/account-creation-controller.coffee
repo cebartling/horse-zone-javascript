@@ -1,14 +1,19 @@
 'use strict'
 
-angular.module('horseZone').controller 'AccountCreationCtrl', ($state, AccountCreationService) ->
+angular.module('horseZone').controller 'AccountCreationCtrl', (AccountCreationService) ->
   @accountCreationError = false
 
   @account = {
-    firstName: undefined
-    lastName: undefined
-    emailAddress: undefined
-    password: undefined
-    confirmPassword: undefined
+    firstName: 'Kurt'
+    lastName: 'Foobar'
+    emailAddress: 'Kurt@foobar.com'
+    password: 'pwd12345'
+    confirmPassword: 'pwd12345'
+#    firstName: undefined
+#    lastName: undefined
+#    emailAddress: undefined
+#    password: undefined
+#    confirmPassword: undefined
   }
 
   @formErrors = {
@@ -20,10 +25,11 @@ angular.module('horseZone').controller 'AccountCreationCtrl', ($state, AccountCr
   }
 
   @createAccount = ->
-    @validateForm
+#    @validateForm
+    AccountCreationService.create @account
 
-  @validateForm = ->
-    if not @account.password
-      @formErrors.password = true
+#  @validateForm = ->
+#    if not @account.password
+#      @formErrors.password = true
 
   @

@@ -22,7 +22,7 @@ chalk = require('chalk')
 # handle backend request and proxy them to your backend.
 ###
 proxyMiddleware = (req, res, next) ->
-  if /\/authenticate/.test(req.url)
+  if /\/authenticate/.test(req.url) or /\/api/.test(req.url)
     console.info chalk.red("Proxying #{req.url}")
     proxy.web(req, res)
   else

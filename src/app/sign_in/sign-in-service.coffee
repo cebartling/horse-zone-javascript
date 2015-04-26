@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('horseZone').factory 'SignInService', ($http, $log) ->
+angular.module('horseZone').factory 'SignInService', ($http, $log, AuthorizationService) ->
   class SignInService
     constructor: ->
       @loginUrl = 'authenticate'
@@ -12,7 +12,7 @@ angular.module('horseZone').factory 'SignInService', ($http, $log) ->
       promise = $http.post(@loginUrl, data, options)
       promise.then (response) ->
         $log.info 'Setting the web token'
-      #          authorizationService.setAuthorization(response.data)
+        AuthorizationService.setAuthorization(response.data)
       promise
 
   new SignInService()
