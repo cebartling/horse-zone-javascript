@@ -4,11 +4,11 @@ angular.module('horseZone').controller 'AccountCreationCtrl', (AccountCreationSe
   @accountCreationError = false
 
   @account = {
-    firstName: 'Kurt'
-    lastName: 'Foobar'
-    emailAddress: 'Kurt@foobar.com'
-    password: 'pwd12345'
-    confirmPassword: 'pwd12345'
+    first_name: 'Kurt'
+    last_name: 'Foobar'
+    email_address: 'Kurt@foobar.com'
+    password: ''
+    confirm_password: ''
 #    firstName: undefined
 #    lastName: undefined
 #    emailAddress: undefined
@@ -16,13 +16,13 @@ angular.module('horseZone').controller 'AccountCreationCtrl', (AccountCreationSe
 #    confirmPassword: undefined
   }
 
-  @formErrors = {
-    firstName: false
-    lastName: false
-    emailAddress: false
-    password: false
-    confirmPassword: false
-  }
+#  @formErrors = {
+#    firstName: false
+#    lastName: false
+#    emailAddress: false
+#    password: false
+#    confirmPassword: false
+#  }
 
   @createAccount = ->
 #    @validateForm

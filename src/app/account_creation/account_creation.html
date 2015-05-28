@@ -21,38 +21,36 @@
           <input type="text"
                  class="form-control"
                  placeholder="First name"
-                 ng-model="AccountCreationCtrl.account.firstName"
+                 ng-model="AccountCreationCtrl.account.first_name"
                  ng-minlength="1"
                  required autofocus>
 
           <input type="text"
                  class="form-control"
                  placeholder="Last name"
-                 ng-model="AccountCreationCtrl.account.lastName"
+                 ng-model="AccountCreationCtrl.account.last_name"
                  ng-minlength="1"
                  required>
 
           <input type="text"
                  class="form-control"
                  placeholder="Email address"
-                 ng-model="AccountCreationCtrl.account.emailAddress"
+                 ng-model="AccountCreationCtrl.account.email_address"
                  required>
 
           <div class="spacer">&nbsp;</div>
 
           <input type="password"
+                 required
                  class="form-control"
                  placeholder="Password"
-                 ng-model="AccountCreationCtrl.account.password"
-                 ng-minlength="12"
-                 required>
+                 ng-model="AccountCreationCtrl.account.password">
 
           <input type="password"
+                 required
                  class="form-control"
                  placeholder="Confirm password"
-                 ng-model="AccountCreationCtrl.account.confirmPassword"
-                 ng-minlength="12"
-                 required>
+                 ng-model="AccountCreationCtrl.account.confirm_password">
 
           <div class="spacer">&nbsp;</div>
           <button class="btn btn-lg btn-primary btn-block"
