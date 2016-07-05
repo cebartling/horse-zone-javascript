@@ -18,6 +18,7 @@
 {{#each scripts.polyfills}}
 <script src="{{.}}"></script>
 {{/each}}
+<script src="http://cdn.auth0.com/js/lock/10.0.0-rc.1/lock.min.js"></script>
 <script>
     System.import('system-config.js').then(function () {
         System.import('main');

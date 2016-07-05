@@ -17,7 +17,7 @@ module.exports = function (defaults) {
             'rxjs/**/*.+(js|js.map)',
             '@angular/**/*.+(js|js.map)',
             'angular2-jwt/**/*.+(js|js.map)',
-            // 'auth0-lock/lib/**/*.+(js|js.map)'
+            'auth0-lock/lib/**/*.+(js|js.map)'
         ]
     });
 };

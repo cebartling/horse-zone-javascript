@@ -6,10 +6,14 @@
  * User Configuration.
  **********************************************************************************************/
 /** Map relative paths to URLs. */
-const map:any = {};
+const map:any = {
+    'angular2-jwt': 'vendor/angular2-jwt/angular2-jwt.js',
+};
 
 /** User packages configuration. */
-const packages:any = {};
+const packages:any = {
+    'angular2-jwt': {defaultExtension: 'js'},
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
@@ -34,10 +38,7 @@ const barrels:string[] = [
     /** @cli-barrel */
 ];
 
-const cliSystemConfigPackages:any = {
-    'angular2-jwt': {main: 'angular2-jwt.js', defaultExtension: 'js'},
-    // 'auth0-lock': {defaultExtension: 'js'}
-};
+const cliSystemConfigPackages:any = {};
 barrels.forEach((barrelName:string) => {
     cliSystemConfigPackages[barrelName] = {main: 'index'};
 });
@@ -50,8 +51,6 @@ System.config({
     map: {
         '@angular': 'vendor/@angular',
         'rxjs': 'vendor/rxjs',
-        'angular2-jwt': 'vendor/angular2-jwt',
-        // 'auth0-lock': 'vendor/auth0-lock',
         'main': 'main.js'
     },
     packages: cliSystemConfigPackages
