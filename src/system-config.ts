@@ -35,9 +35,8 @@ const barrels:string[] = [
 ];
 
 const cliSystemConfigPackages:any = {
-    'angular2-jwt': {
-        main: 'angular2-jwt.js'
-    },
+    'angular2-jwt': {main: 'angular2-jwt.js', defaultExtension: 'js'},
+    // 'auth0-lock': {defaultExtension: 'js'}
 };
 barrels.forEach((barrelName:string) => {
     cliSystemConfigPackages[barrelName] = {main: 'index'};
@@ -52,6 +51,7 @@ System.config({
         '@angular': 'vendor/@angular',
         'rxjs': 'vendor/rxjs',
         'angular2-jwt': 'vendor/angular2-jwt',
+        // 'auth0-lock': 'vendor/auth0-lock',
         'main': 'main.js'
     },
     packages: cliSystemConfigPackages
